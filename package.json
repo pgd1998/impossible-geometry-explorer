@@ -13,14 +13,15 @@
     "clean": "rm -rf dist node_modules"
   },
   "dependencies": {
-    "three": "^0.160.0",
-    "@react-three/fiber": "^8.15.12",
+    "@react-spring/three": "^10.0.2",
     "@react-three/drei": "^9.92.7",
+    "@react-three/fiber": "^8.15.12",
     "@react-three/postprocessing": "^2.15.11",
+    "framer-motion": "^10.16.16",
+    "leva": "^0.9.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "leva": "^0.9.35",
-    "framer-motion": "^10.16.16",
+    "three": "^0.160.0",
     "zustand": "^4.4.7"
   },
   "devDependencies": {

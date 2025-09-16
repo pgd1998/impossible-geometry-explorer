@@ -3,16 +3,14 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Environment, Grid } from '@react-three/drei';
 import { Leva, useControls } from 'leva';
 import { Scene } from './components/Scene';
-import { PenroseTriangle } from './geometries/PenroseTriangle';
 import { UI } from './components/UI';
 
 export default function App() {
   const [selectedObject, setSelectedObject] = useState('penrose-triangle');
   const [showGrid, setShowGrid] = useState(true);
   
-  const { background, gridOpacity } = useControls('Scene', {
-    background: '#f8f9fa',
-    gridOpacity: { value: 0.2, min: 0, max: 1 }
+  const { background } = useControls('Scene', {
+    background: '#f8f9fa'
   });
 
   return (

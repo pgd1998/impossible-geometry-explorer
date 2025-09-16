@@ -1,36 +1,46 @@
-import { PenroseTriangle } from '../geometries/PenroseTriangle';
-import { motion } from 'framer-motion-3d';
+import { PenroseTriangleTrue } from '../geometries/PenroseTriangleTrue';
+import { KleinBottle } from '../geometries/KleinBottle';
+import { MobiusStrip } from '../geometries/MobiusStrip';
+import { animated, useSpring } from '@react-spring/three';
 
 interface SceneProps {
   selectedObject: string;
 }
 
 export function Scene({ selectedObject }: SceneProps) {
+  const springProps = useSpring({
+    from: { scale: 0, rotationY: 0 },
+    to: { scale: 1, rotationY: Math.PI * 0.5 },
+    config: { duration: 800 }
+  });
+
   return (
     <>
       {selectedObject === 'penrose-triangle' && (
-        <motion.group
-          initial={{ scale: 0, rotateY: 0 }}
-          animate={{ scale: 1, rotateY: Math.PI * 2 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
-        >
-          <PenroseTriangle autoRotate={true} />
-        </motion.group>
+        <animated.group scale={springProps.scale} rotation-y={springProps.rotationY}>
+          <PenroseTriangleTrue autoRotate={true} />
+        </animated.group>
       )}
       
-      {/* Placeholder for future objects */}
       {selectedObject === 'klein-bottle' && (
-        <mesh>
-          <torusKnotGeometry args={[1, 0.3, 100, 16]} />
-          <meshStandardMaterial color="#0066ff" wireframe />
-        </mesh>
+        <animated.group scale={springProps.scale} rotation-y={springProps.rotationY}>
+          <KleinBottle autoRotate={true} />
+        </animated.group>
       )}
       
       {selectedObject === 'mobius-strip' && (
-        <mesh>
-          <torusGeometry args={[2, 0.5, 8, 32]} />
-          <meshStandardMaterial color="#00cc88" />
-        </mesh>
+        <animated.group scale={springProps.scale} rotation-y={springProps.rotationY}>
+          <MobiusStrip autoRotate={true} showParticle={true} />
+        </animated.group>
+      )}
+
+      {selectedObject === 'escher-cube' && (
+        <animated.group scale={springProps.scale} rotation-y={springProps.rotationY}>
+          <mesh>
+            <boxGeometry args={[2, 2, 2]} />
+            <meshStandardMaterial color="#666" wireframe />
+          </mesh>
+        </animated.group>
       )}
     </>
   );

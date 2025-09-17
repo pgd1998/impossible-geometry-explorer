@@ -10,26 +10,26 @@ interface UIProps {
 
 const objects = [
   { 
-    id: 'penrose-triangle', 
-    name: '△',
-    fullName: 'Penrose Triangle',
-    description: 'The impossible triangle that appears solid but cannot exist in 3D space. Each beam appears to connect seamlessly, yet the structure defies geometry.'
-  },
-  { 
     id: 'klein-bottle', 
-    name: '🍼',
+    name: 'K',
     fullName: 'Klein Bottle',
     description: 'A closed surface with no distinct inside or outside. In 4D space, it exists without self-intersection, but in 3D it must pass through itself.'
   },
   { 
     id: 'mobius-strip', 
-    name: '∞',
+    name: 'M',
     fullName: 'Möbius Strip',
     description: 'A surface with only one side and one boundary. Follow the red particle as it travels the impossible path, always staying on the same side.'
   },
   { 
+    id: 'boys-surface', 
+    name: 'B',
+    fullName: 'Boy\'s Surface',
+    description: 'A mathematical surface that is a real projective plane with self-intersections. This non-orientable surface has fascinating topological properties.'
+  },
+  { 
     id: 'escher-cube', 
-    name: '□',
+    name: 'E',
     fullName: 'Impossible Cube',
     description: 'A wireframe cube where each face exists in a different perspective, creating an impossible 3D structure.'
   },

@@ -6,8 +6,8 @@ import { Scene } from './components/Scene';
 import { UI } from './components/UI';
 
 export default function App() {
-  const [selectedObject, setSelectedObject] = useState('penrose-triangle');
-  const [showGrid, setShowGrid] = useState(true);
+  const [selectedObject, setSelectedObject] = useState('klein-bottle');
+  const [showGrid, setShowGrid] = useState(false);
   
   const { background } = useControls('Scene', {
     background: '#f8f9fa'

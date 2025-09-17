@@ -1,6 +1,6 @@
-import { PenroseTriangleTrue } from '../geometries/PenroseTriangleTrue';
 import { KleinBottle } from '../geometries/KleinBottle';
 import { MobiusStrip } from '../geometries/MobiusStrip';
+import { BoysSurface } from '../geometries/BoysSurface';
 import { animated, useSpring } from '@react-spring/three';
 
 interface SceneProps {
@@ -16,12 +16,6 @@ export function Scene({ selectedObject }: SceneProps) {
 
   return (
     <>
-      {selectedObject === 'penrose-triangle' && (
-        <animated.group scale={springProps.scale} rotation-y={springProps.rotationY}>
-          <PenroseTriangleTrue autoRotate={true} />
-        </animated.group>
-      )}
-      
       {selectedObject === 'klein-bottle' && (
         <animated.group scale={springProps.scale} rotation-y={springProps.rotationY}>
           <KleinBottle autoRotate={true} />
@@ -31,6 +25,12 @@ export function Scene({ selectedObject }: SceneProps) {
       {selectedObject === 'mobius-strip' && (
         <animated.group scale={springProps.scale} rotation-y={springProps.rotationY}>
           <MobiusStrip autoRotate={true} showParticle={true} />
+        </animated.group>
+      )}
+
+      {selectedObject === 'boys-surface' && (
+        <animated.group scale={springProps.scale} rotation-y={springProps.rotationY}>
+          <BoysSurface autoRotate={true} />
         </animated.group>
       )}
 
